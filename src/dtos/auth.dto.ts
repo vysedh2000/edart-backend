@@ -22,6 +22,11 @@ export class userSignUpDto {
   name!: string;
 
   password!: string;
+  nationality!: string;
+  country!: string;
+  dob!: string;
+  idnum!: string;
+  idtype!: string;
 }
 
 export class userSignUpReponseDto {
@@ -31,7 +36,6 @@ export class userSignUpReponseDto {
 
 export class userSession {
   auth_id!: string;
-  expire_at!: Date;
   user_id!: string;
-  id!: string;
+  token!: string;
 }

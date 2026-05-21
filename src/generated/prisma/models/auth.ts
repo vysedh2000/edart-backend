@@ -230,7 +230,7 @@ export type authCreateInput = {
   email: string
   username: string
   password: string
-  userId?: string
+  userId: string
 }
 
 export type authUncheckedCreateInput = {
@@ -238,7 +238,7 @@ export type authUncheckedCreateInput = {
   email: string
   username: string
   password: string
-  userId?: string
+  userId: string
 }
 
 export type authUpdateInput = {
@@ -262,7 +262,7 @@ export type authCreateManyInput = {
   email: string
   username: string
   password: string
-  userId?: string
+  userId: string
 }
 
 export type authUpdateManyMutationInput = {

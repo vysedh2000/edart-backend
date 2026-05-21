@@ -52,7 +52,6 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   auth: 'auth',
-  appUser: 'appUser',
   testtbl: 'testtbl'
 } as const
 
@@ -81,15 +80,6 @@ export const AuthScalarFieldEnum = {
 } as const
 
 export type AuthScalarFieldEnum = (typeof AuthScalarFieldEnum)[keyof typeof AuthScalarFieldEnum]
-
-
-export const AppUserScalarFieldEnum = {
-  uid: 'uid',
-  aid: 'aid',
-  name: 'name'
-} as const
-
-export type AppUserScalarFieldEnum = (typeof AppUserScalarFieldEnum)[keyof typeof AppUserScalarFieldEnum]
 
 
 export const TesttblScalarFieldEnum = {

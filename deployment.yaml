@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edart-digi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edart-digi
+  template:
+    metadata:
+      labels:
+        app: edart-digi
+    spec:
+      containers:
+        - name: edart-digi
+          image: vviisydh/edart-digi:2 # Use the image you just pushed
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3030
+          envFrom:
+            - configMapRef:
+                name: nestjs-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edart-dg-service
+spec:
+  selector:
+    app: edart-digi
+  ports:
+    - protocol: TCP
+      port: 3030
+      targetPort: 3030
+  type: ClusterIP

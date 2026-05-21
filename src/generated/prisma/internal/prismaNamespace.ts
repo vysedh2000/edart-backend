@@ -385,7 +385,6 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   auth: 'auth',
-  appUser: 'appUser',
   testtbl: 'testtbl'
 } as const
 
@@ -402,7 +401,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "auth" | "appUser" | "testtbl"
+    modelProps: "auth" | "testtbl"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -477,80 +476,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.authCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.AuthCountAggregateOutputType> | number
-        }
-      }
-    }
-    appUser: {
-      payload: Prisma.$appUserPayload<ExtArgs>
-      fields: Prisma.appUserFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.appUserFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.appUserFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>
-        }
-        findFirst: {
-          args: Prisma.appUserFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.appUserFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>
-        }
-        findMany: {
-          args: Prisma.appUserFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>[]
-        }
-        create: {
-          args: Prisma.appUserCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>
-        }
-        createMany: {
-          args: Prisma.appUserCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        createManyAndReturn: {
-          args: Prisma.appUserCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>[]
-        }
-        delete: {
-          args: Prisma.appUserDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>
-        }
-        update: {
-          args: Prisma.appUserUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>
-        }
-        deleteMany: {
-          args: Prisma.appUserDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.appUserUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateManyAndReturn: {
-          args: Prisma.appUserUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>[]
-        }
-        upsert: {
-          args: Prisma.appUserUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$appUserPayload>
-        }
-        aggregate: {
-          args: Prisma.AppUserAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateAppUser>
-        }
-        groupBy: {
-          args: Prisma.appUserGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AppUserGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.appUserCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AppUserCountAggregateOutputType> | number
         }
       }
     }
@@ -676,15 +601,6 @@ export const AuthScalarFieldEnum = {
 } as const
 
 export type AuthScalarFieldEnum = (typeof AuthScalarFieldEnum)[keyof typeof AuthScalarFieldEnum]
-
-
-export const AppUserScalarFieldEnum = {
-  uid: 'uid',
-  aid: 'aid',
-  name: 'name'
-} as const
-
-export type AppUserScalarFieldEnum = (typeof AppUserScalarFieldEnum)[keyof typeof AppUserScalarFieldEnum]
 
 
 export const TesttblScalarFieldEnum = {
@@ -854,7 +770,6 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   auth?: Prisma.authOmit
-  appUser?: Prisma.appUserOmit
   testtbl?: Prisma.testtblOmit
 }
 

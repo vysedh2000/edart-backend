@@ -9,6 +9,5 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/auth'
-export type * from './models/appUser'
 export type * from './models/testtbl'
 export type * from './commonInputTypes'

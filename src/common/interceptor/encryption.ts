@@ -23,7 +23,6 @@ export class EncryptInterceptor implements NestInterceptor {
         } else {
           encrypted = json;
         }
-
         return encrypted;
       }),
     );

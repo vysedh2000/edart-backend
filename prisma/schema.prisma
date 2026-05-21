@@ -21,13 +21,7 @@ model auth {
   email     String    @unique
   username  String    @unique
   password  String
-  userId    String    @default(dbgenerated("generate_user_id()"))
-}
-
-model appUser {
-  uid       String    @id @unique @default(dbgenerated("generate_user_id()"))
-  aid       String    @unique
-  name      String
+  userId    String
 }
 
 model testtbl{

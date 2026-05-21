@@ -12,3 +12,5 @@ export function generateSession(): string {
   const token = encodeBase32LowerCaseNoPadding(bytes);
   return token;
 }
+
+// export function

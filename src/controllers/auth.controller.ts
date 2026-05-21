@@ -1,7 +1,8 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { userLoginDto, userSignUpDto } from '../dtos/auth.dto';
 import { AuthService } from '../services/auth.service';
-import { decodeHex } from '@oslojs/encoding';
+import { SessionGuard } from '../common/guard/session.guard';
+import { Request } from 'express';
 
 @Controller('auth')
 export class AuthController {
@@ -17,9 +18,10 @@ export class AuthController {
     return this.authService.signup(request);
   }
 
-  @Post('test')
-  async testCon(@Body() request: any): Promise<any> {
-    const key = 'my-secret-key';
-    return decodeHex(request.test);
+  @Get('me')
+  @UseGuards(SessionGuard)
+  async getUser(@Req() request: Request) {
+    const token = request.cookies?.['authid'];
+    return this.authService.getUser(token);
   }
 }

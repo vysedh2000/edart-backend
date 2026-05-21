@@ -45,11 +45,6 @@ export { Prisma }
  */
 export type auth = Prisma.authModel
 /**
- * Model appUser
- * 
- */
-export type appUser = Prisma.appUserModel
-/**
  * Model testtbl
  * 
  */
