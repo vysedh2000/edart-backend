@@ -385,7 +385,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   auth: 'auth',
-  testtbl: 'testtbl'
+  txnSuspect: 'txnSuspect'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -401,7 +401,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "auth" | "testtbl"
+    modelProps: "auth" | "txnSuspect"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -479,77 +479,77 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    testtbl: {
-      payload: Prisma.$testtblPayload<ExtArgs>
-      fields: Prisma.testtblFieldRefs
+    txnSuspect: {
+      payload: Prisma.$txnSuspectPayload<ExtArgs>
+      fields: Prisma.txnSuspectFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.testtblFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload> | null
+          args: Prisma.txnSuspectFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.testtblFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>
+          args: Prisma.txnSuspectFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>
         }
         findFirst: {
-          args: Prisma.testtblFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload> | null
+          args: Prisma.txnSuspectFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.testtblFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>
+          args: Prisma.txnSuspectFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>
         }
         findMany: {
-          args: Prisma.testtblFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>[]
+          args: Prisma.txnSuspectFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>[]
         }
         create: {
-          args: Prisma.testtblCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>
+          args: Prisma.txnSuspectCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>
         }
         createMany: {
-          args: Prisma.testtblCreateManyArgs<ExtArgs>
+          args: Prisma.txnSuspectCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.testtblCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>[]
+          args: Prisma.txnSuspectCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>[]
         }
         delete: {
-          args: Prisma.testtblDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>
+          args: Prisma.txnSuspectDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>
         }
         update: {
-          args: Prisma.testtblUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>
+          args: Prisma.txnSuspectUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>
         }
         deleteMany: {
-          args: Prisma.testtblDeleteManyArgs<ExtArgs>
+          args: Prisma.txnSuspectDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.testtblUpdateManyArgs<ExtArgs>
+          args: Prisma.txnSuspectUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.testtblUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>[]
+          args: Prisma.txnSuspectUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>[]
         }
         upsert: {
-          args: Prisma.testtblUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$testtblPayload>
+          args: Prisma.txnSuspectUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSuspectPayload>
         }
         aggregate: {
-          args: Prisma.TesttblAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateTesttbl>
+          args: Prisma.TxnSuspectAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTxnSuspect>
         }
         groupBy: {
-          args: Prisma.testtblGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.TesttblGroupByOutputType>[]
+          args: Prisma.txnSuspectGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TxnSuspectGroupByOutputType>[]
         }
         count: {
-          args: Prisma.testtblCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.TesttblCountAggregateOutputType> | number
+          args: Prisma.txnSuspectCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TxnSuspectCountAggregateOutputType> | number
         }
       }
     }
@@ -597,18 +597,25 @@ export const AuthScalarFieldEnum = {
   email: 'email',
   username: 'username',
   password: 'password',
-  userId: 'userId'
+  userId: 'userId',
+  ccy: 'ccy'
 } as const
 
 export type AuthScalarFieldEnum = (typeof AuthScalarFieldEnum)[keyof typeof AuthScalarFieldEnum]
 
 
-export const TesttblScalarFieldEnum = {
-  tid: 'tid',
-  text: 'text'
+export const TxnSuspectScalarFieldEnum = {
+  batchId: 'batchId',
+  asset: 'asset',
+  debitAcc: 'debitAcc',
+  creditAcc: 'creditAcc',
+  txnCode: 'txnCode',
+  amount: 'amount',
+  narative: 'narative',
+  userId: 'userId'
 } as const
 
-export type TesttblScalarFieldEnum = (typeof TesttblScalarFieldEnum)[keyof typeof TesttblScalarFieldEnum]
+export type TxnSuspectScalarFieldEnum = (typeof TxnSuspectScalarFieldEnum)[keyof typeof TxnSuspectScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -648,20 +655,6 @@ export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaMod
 
 
 /**
- * Reference to a field of type 'Int'
- */
-export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-/**
- * Reference to a field of type 'Int[]'
- */
-export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
-
-
-/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -672,6 +665,20 @@ export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, '
  * Reference to a field of type 'Float[]'
  */
 export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Int'
+ */
+export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+/**
+ * Reference to a field of type 'Int[]'
+ */
+export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
     
 
 /**
@@ -770,7 +777,7 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   auth?: Prisma.authOmit
-  testtbl?: Prisma.testtblOmit
+  txnSuspect?: Prisma.txnSuspectOmit
 }
 
 /* Types for Logging */

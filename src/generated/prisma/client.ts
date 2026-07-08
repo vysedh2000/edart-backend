@@ -45,7 +45,7 @@ export { Prisma }
  */
 export type auth = Prisma.authModel
 /**
- * Model testtbl
+ * Model txnSuspect
  * 
  */
-export type testtbl = Prisma.testtblModel
+export type txnSuspect = Prisma.txnSuspectModel

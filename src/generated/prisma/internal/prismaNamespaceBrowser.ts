@@ -52,7 +52,7 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   auth: 'auth',
-  testtbl: 'testtbl'
+  txnSuspect: 'txnSuspect'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -76,18 +76,25 @@ export const AuthScalarFieldEnum = {
   email: 'email',
   username: 'username',
   password: 'password',
-  userId: 'userId'
+  userId: 'userId',
+  ccy: 'ccy'
 } as const
 
 export type AuthScalarFieldEnum = (typeof AuthScalarFieldEnum)[keyof typeof AuthScalarFieldEnum]
 
 
-export const TesttblScalarFieldEnum = {
-  tid: 'tid',
-  text: 'text'
+export const TxnSuspectScalarFieldEnum = {
+  batchId: 'batchId',
+  asset: 'asset',
+  debitAcc: 'debitAcc',
+  creditAcc: 'creditAcc',
+  txnCode: 'txnCode',
+  amount: 'amount',
+  narative: 'narative',
+  userId: 'userId'
 } as const
 
-export type TesttblScalarFieldEnum = (typeof TesttblScalarFieldEnum)[keyof typeof TesttblScalarFieldEnum]
+export type TxnSuspectScalarFieldEnum = (typeof TxnSuspectScalarFieldEnum)[keyof typeof TxnSuspectScalarFieldEnum]
 
 
 export const SortOrder = {

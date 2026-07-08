@@ -6,6 +6,6 @@ export class AppService {
   constructor(private readonly prismaService: PrismaService) {}
 
   async getHello(): Promise<any> {
-    return await this.prismaService.testtbl.findMany();
+    return 'Kurwa WOrld';
   }
 }

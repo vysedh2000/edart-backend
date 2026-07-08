@@ -4,11 +4,11 @@ import { userLoginDto, userSession, userSignUpDto } from '../dtos/auth.dto';
 import { generateSession, hashPassword } from '../common/utils/session.utils';
 import { encodeHexLowerCase } from '@oslojs/encoding';
 import { sha256 } from '@oslojs/crypto/sha2';
-import { comparePassword } from '../utils/authUtils';
-import { createUserResponse } from '../external/core.dto';
-import { createUser } from '../external/core.service';
 import { InjectRedis } from '@nestjs-modules/ioredis';
 import Redis from 'ioredis';
+import { createUserResponse } from '../external/core/core.dto';
+import { createUser } from '../external/core/core.service';
+import { comparePassword } from '../utils/auth.util';
 
 @Injectable()
 export class AuthService {
@@ -32,12 +32,10 @@ export class AuthService {
         message: 'Invalid Credential!',
       };
     }
-    console.log(authInfo);
     const isPasswordValid = await comparePassword(
       payload.password,
       authInfo.password,
     );
-    console.log(isPasswordValid);
     if (!isPasswordValid) {
       return {
         statusCode: 'A0002',
@@ -70,6 +68,7 @@ export class AuthService {
           username: payload.username,
           email: payload.email,
           password: hashPw,
+          ccy: 'USD',
         },
       });
       const sessionToken = generateSession();

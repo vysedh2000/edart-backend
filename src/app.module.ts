@@ -5,12 +5,18 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule, ConfigService } from '@nestjs/config'; // Added ConfigService
 import { AuthModule } from './module/auth.module';
 import { RedisModule } from '@nestjs-modules/ioredis'; // Added RedisModule
+import { AssetModule } from './module/asset.module';
+import { TransferModule } from './module/transfer.module';
+import { DepositModule } from './module/deposit.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     PrismaModule,
     AuthModule,
+    AssetModule,
+    TransferModule,
+    DepositModule,
 
     // Register Redis dynamically using your global ConfigModule
     RedisModule.forRootAsync({

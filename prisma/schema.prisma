@@ -22,9 +22,16 @@ model auth {
   username  String    @unique
   password  String
   userId    String
+  ccy       String
 }
 
-model testtbl{
-  tid Int @id @default(autoincrement())
-  text String
+model txnSuspect {
+  batchId   String    @id
+  asset     String
+  debitAcc  String
+  creditAcc String
+  txnCode   String
+  amount    Float
+  narative  String
+  userId    String
 }
