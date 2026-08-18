@@ -35,3 +35,14 @@ model txnSuspect {
   narative  String
   userId    String
 }
+
+model depositSuspect {
+  exId      String    @id
+  method    String
+  desc      String
+}
+
+model txnSucess {
+  exId      String    @id
+  txnId     String
+}

@@ -59,7 +59,8 @@ export async function getAssetsByUserId(userId: string): Promise<any> {
 }
 
 export async function FundTxnService(request: FundTxnRequest): Promise<any> {
-  const res = await fetch(`${getBaseUrl()}/fund-txn`, {
+  console.log('FundTxnService', request);
+  const res = await fetch(`${getBaseUrl()}/txn/fundTxn`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

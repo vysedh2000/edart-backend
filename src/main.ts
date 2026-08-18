@@ -10,6 +10,7 @@ async function bootstrap() {
   app.enableCors({
     origin: true,
     credentials: true,
+    allowedHeaders: '*',
   });
   app.useGlobalInterceptors(new EncryptInterceptor());
   await app.listen(process.env.PORT ?? 3030);

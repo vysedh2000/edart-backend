@@ -24,7 +24,7 @@ export class TransferService {
       txnRequest.debitAcc = request.sender;
       txnRequest.creditAcc = request.receiver;
       txnRequest.txnCode = '1';
-      txnRequest.amount = request.amount;
+      txnRequest.amount = request.amount.toString();
       txnRequest.narative = 'Transfer @@ to @@';
       txnRequest.userId = request.userId;
 

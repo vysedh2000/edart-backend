@@ -52,7 +52,9 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   auth: 'auth',
-  txnSuspect: 'txnSuspect'
+  txnSuspect: 'txnSuspect',
+  depositSuspect: 'depositSuspect',
+  txnSucess: 'txnSucess'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -95,6 +97,23 @@ export const TxnSuspectScalarFieldEnum = {
 } as const
 
 export type TxnSuspectScalarFieldEnum = (typeof TxnSuspectScalarFieldEnum)[keyof typeof TxnSuspectScalarFieldEnum]
+
+
+export const DepositSuspectScalarFieldEnum = {
+  exId: 'exId',
+  method: 'method',
+  desc: 'desc'
+} as const
+
+export type DepositSuspectScalarFieldEnum = (typeof DepositSuspectScalarFieldEnum)[keyof typeof DepositSuspectScalarFieldEnum]
+
+
+export const TxnSucessScalarFieldEnum = {
+  exId: 'exId',
+  txnId: 'txnId'
+} as const
+
+export type TxnSucessScalarFieldEnum = (typeof TxnSucessScalarFieldEnum)[keyof typeof TxnSucessScalarFieldEnum]
 
 
 export const SortOrder = {

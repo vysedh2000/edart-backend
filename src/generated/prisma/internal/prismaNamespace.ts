@@ -385,7 +385,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   auth: 'auth',
-  txnSuspect: 'txnSuspect'
+  txnSuspect: 'txnSuspect',
+  depositSuspect: 'depositSuspect',
+  txnSucess: 'txnSucess'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -401,7 +403,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "auth" | "txnSuspect"
+    modelProps: "auth" | "txnSuspect" | "depositSuspect" | "txnSucess"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -553,6 +555,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    depositSuspect: {
+      payload: Prisma.$depositSuspectPayload<ExtArgs>
+      fields: Prisma.depositSuspectFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.depositSuspectFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.depositSuspectFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>
+        }
+        findFirst: {
+          args: Prisma.depositSuspectFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.depositSuspectFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>
+        }
+        findMany: {
+          args: Prisma.depositSuspectFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>[]
+        }
+        create: {
+          args: Prisma.depositSuspectCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>
+        }
+        createMany: {
+          args: Prisma.depositSuspectCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.depositSuspectCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>[]
+        }
+        delete: {
+          args: Prisma.depositSuspectDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>
+        }
+        update: {
+          args: Prisma.depositSuspectUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>
+        }
+        deleteMany: {
+          args: Prisma.depositSuspectDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.depositSuspectUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.depositSuspectUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>[]
+        }
+        upsert: {
+          args: Prisma.depositSuspectUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$depositSuspectPayload>
+        }
+        aggregate: {
+          args: Prisma.DepositSuspectAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDepositSuspect>
+        }
+        groupBy: {
+          args: Prisma.depositSuspectGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DepositSuspectGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.depositSuspectCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DepositSuspectCountAggregateOutputType> | number
+        }
+      }
+    }
+    txnSucess: {
+      payload: Prisma.$txnSucessPayload<ExtArgs>
+      fields: Prisma.txnSucessFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.txnSucessFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.txnSucessFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>
+        }
+        findFirst: {
+          args: Prisma.txnSucessFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.txnSucessFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>
+        }
+        findMany: {
+          args: Prisma.txnSucessFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>[]
+        }
+        create: {
+          args: Prisma.txnSucessCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>
+        }
+        createMany: {
+          args: Prisma.txnSucessCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.txnSucessCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>[]
+        }
+        delete: {
+          args: Prisma.txnSucessDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>
+        }
+        update: {
+          args: Prisma.txnSucessUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>
+        }
+        deleteMany: {
+          args: Prisma.txnSucessDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.txnSucessUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.txnSucessUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>[]
+        }
+        upsert: {
+          args: Prisma.txnSucessUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$txnSucessPayload>
+        }
+        aggregate: {
+          args: Prisma.TxnSucessAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTxnSucess>
+        }
+        groupBy: {
+          args: Prisma.txnSucessGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TxnSucessGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.txnSucessCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TxnSucessCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -616,6 +766,23 @@ export const TxnSuspectScalarFieldEnum = {
 } as const
 
 export type TxnSuspectScalarFieldEnum = (typeof TxnSuspectScalarFieldEnum)[keyof typeof TxnSuspectScalarFieldEnum]
+
+
+export const DepositSuspectScalarFieldEnum = {
+  exId: 'exId',
+  method: 'method',
+  desc: 'desc'
+} as const
+
+export type DepositSuspectScalarFieldEnum = (typeof DepositSuspectScalarFieldEnum)[keyof typeof DepositSuspectScalarFieldEnum]
+
+
+export const TxnSucessScalarFieldEnum = {
+  exId: 'exId',
+  txnId: 'txnId'
+} as const
+
+export type TxnSucessScalarFieldEnum = (typeof TxnSucessScalarFieldEnum)[keyof typeof TxnSucessScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -778,6 +945,8 @@ export type PrismaClientOptions = ({
 export type GlobalOmitConfig = {
   auth?: Prisma.authOmit
   txnSuspect?: Prisma.txnSuspectOmit
+  depositSuspect?: Prisma.depositSuspectOmit
+  txnSucess?: Prisma.txnSucessOmit
 }
 
 /* Types for Logging */
