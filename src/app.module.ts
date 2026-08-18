@@ -8,6 +8,8 @@ import { RedisModule } from '@nestjs-modules/ioredis'; // Added RedisModule
 import { AssetModule } from './module/asset.module';
 import { TransferModule } from './module/transfer.module';
 import { DepositModule } from './module/deposit.module';
+import { MarketModule } from './module/market.module';
+import { SocketModule } from './module/socket.module';
 
 @Module({
   imports: [
@@ -17,6 +19,8 @@ import { DepositModule } from './module/deposit.module';
     AssetModule,
     TransferModule,
     DepositModule,
+    MarketModule,
+    SocketModule,
 
     // Register Redis dynamically using your global ConfigModule
     RedisModule.forRootAsync({

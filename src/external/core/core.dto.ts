@@ -37,7 +37,7 @@ export class FundTxnRequest {
   @Expose({ name: 'txnCode' })
   txnCode!: string;
   @Expose({ name: 'amount' })
-  amount!: number;
+  amount!: string;
   @Expose({ name: 'narative' })
   narative!: string;
   @Expose({ name: 'userId' })

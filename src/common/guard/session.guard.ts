@@ -35,8 +35,24 @@ export class SessionGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest();
 
-    const token = request.cookies?.['session_token'];
-    const authid = request.cookies?.['authid'];
+    const rawCookieHeader = request.headers.cookies;
+
+    let token: string | undefined = undefined;
+    let authid: string | undefined = undefined;
+
+    if (rawCookieHeader) {
+      // 2. Parse the string into a temporary object
+      const parsedCookies = Object.fromEntries(
+        rawCookieHeader.split('; ').map((cookie: string) => {
+          const [key, ...valueParts] = cookie.split('=');
+          return [key, valueParts.join('=')];
+        }),
+      );
+
+      // 3. Assign the variables
+      token = parsedCookies['session_token'];
+      authid = parsedCookies['authid'];
+    }
 
     if (!token) {
       throw new UnauthorizedException('No session token attached!');

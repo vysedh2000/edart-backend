@@ -5,14 +5,13 @@ export async function stripeSession(
 ): Promise<stripeSessionResponse> {
   const req = new URLSearchParams({
     mode: 'payment',
-    success_url: 'http://localhost:3000',
+    success_url: 'http://localhost:3000/en/wallet',
     cancel_url: 'http://localhost:3000',
     'line_items[0][quantity]': '1',
     'line_items[0][price_data][currency]': 'USD',
     'line_items[0][price_data][unit_amount]': amount,
     'line_items[0][price_data][product_data][name]': 'Deposit',
   });
-  console.log(req);
   try {
     const res = await fetch(`${getBaseUrl()}/v1/checkout/sessions`, {
       method: 'POST',
@@ -23,11 +22,28 @@ export async function stripeSession(
     });
 
     var result: stripeSessionResponse = await res.json();
-    console.log(result);
     return result;
   } catch (e) {
     throw e;
   }
+}
+
+export async function stripeTxnStatus(sessionId: string) {
+  try {
+    const res = await fetch(
+      `${getBaseUrl()}/v1/checkout/sessions/${sessionId}`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${getStripeToken()}`,
+        },
+      },
+    );
+    var result: any = await res.json();
+  } catch (e) {
+    throw e;
+  }
+  return result;
 }
 
 const getStripeToken = (): string => {

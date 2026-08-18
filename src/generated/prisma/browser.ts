@@ -27,3 +27,13 @@ export type auth = Prisma.authModel
  * 
  */
 export type txnSuspect = Prisma.txnSuspectModel
+/**
+ * Model depositSuspect
+ * 
+ */
+export type depositSuspect = Prisma.depositSuspectModel
+/**
+ * Model txnSucess
+ * 
+ */
+export type txnSucess = Prisma.txnSucessModel

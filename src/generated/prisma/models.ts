@@ -10,4 +10,6 @@
  */
 export type * from './models/auth'
 export type * from './models/txnSuspect'
+export type * from './models/depositSuspect'
+export type * from './models/txnSucess'
 export type * from './commonInputTypes'

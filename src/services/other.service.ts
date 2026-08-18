@@ -42,7 +42,7 @@ export class OtherService {
         debitAcc: txnRequest.debitAcc,
         creditAcc: txnRequest.creditAcc,
         txnCode: txnRequest.txnCode,
-        amount: txnRequest.amount,
+        amount: Number(txnRequest.amount),
         narative: txnRequest.narative,
         userId: txnRequest.userId,
       },
